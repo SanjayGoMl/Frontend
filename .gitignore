@@ -1,0 +1,18 @@
+node_modules/
+.DS_Store
+dist/
+.vscode/
+*.log
+.env
+.env.local
+out/
+.cache/
+.next/
+*.tsbuildinfo
+*.swp
+/node_modules
+# /dist
+# /out
+# /pnpm-lock.yaml
+# /package-lock.json
+# /pnpm-workspace.yaml
