@@ -75,7 +75,7 @@ export const Canvas = () => {
       console.log(message);
     
       try {
-        const apiUrl = 'http://127.0.0.1:8000/chat';
+        const apiUrl = 'http://13.218.205.17:8000/chat';
     
         const requestBody = {
           question: message,
