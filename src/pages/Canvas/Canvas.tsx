@@ -7,7 +7,7 @@ import { TrashIcon } from '@heroicons/react/24/outline'
 import { useState, useRef, useEffect } from 'react'
 import ReactTimeAgo from 'react-time-ago'
 import { Chat } from './components/Chat/Chat';
-
+import logo from '../../assets/goml.png'
 
 export const Canvas = () => {
   const [chats, setChats] = useState<IMessage[]>([])
@@ -33,7 +33,7 @@ export const Canvas = () => {
     company_slug: null,
     left_color: '#555555',
     right_color: '#DBCC95',
-    logo:'./src/goml_logo.png' 
+    logo: logo,
    }
 
   const scrollToBottom = () => chatRef?.current?.scrollIntoView({ behavior: 'smooth' });
@@ -75,14 +75,14 @@ export const Canvas = () => {
       console.log(message);
     
       try {
-        const apiUrl = 'http://13.218.205.17:8000/chat';
+        const apiUrl = import.meta.env.VITE_API_URL
     
         const requestBody = {
           question: message,
           analysis_type: "sql"
         };
     
-        const responseApi = await axios.post(apiUrl, requestBody, {
+        const responseApi = await axios.post(`${apiUrl}/chat`, requestBody, {
           headers: {
             'accept': 'application/json',
             'Content-Type': 'application/json'

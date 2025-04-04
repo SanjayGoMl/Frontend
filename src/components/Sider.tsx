@@ -4,6 +4,7 @@ import {
   PresentationChartBarIcon,
 } from '@heroicons/react/24/outline'
 import { classNames } from '@/utils/fn'
+import logo from '../assets/goml.png'
 
 export const Sider = () => {
   const location = useLocation()
@@ -15,7 +16,7 @@ export const Sider = () => {
     >
       <div className='pt-7'>
       <img
-        src='./src/goml.png'
+        src={logo}
         width={80}
       />
       </div>
